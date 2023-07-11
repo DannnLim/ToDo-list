@@ -92,3 +92,40 @@ margin-right:10px;
 }
 
 
+
+@media screen and (max-width: 600px) {
+  body {
+
+  }
+
+  #contents {
+    width: 80%;
+  }
+
+  #date {
+    width: 30%;
+  }
+  #box{
+    width: 98%;
+  }
+
+  h2 {
+    /* Adjust the styles for h2 on smaller screens */
+  }
+
+  #list {
+  }
+
+  li {
+display: flex;
+/* flex-direction: column; */
+  }
+
+  /* input[type="checkbox"] {
+
+  } */
+
+  #completed li {
+padding-left: 0;
+  }
+}

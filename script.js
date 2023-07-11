@@ -1,6 +1,7 @@
 let arr = [];
 const btn = document.getElementById("submit");
 const inputBox = document.getElementById("box");
+const inputLimit = 25;
 const listItems = document.getElementById("list");
 console.log(listItems);
 const completedItems = document.getElementById("completed");
@@ -25,6 +26,16 @@ btn.addEventListener("click", function () {
   renderListI(arr);
 });
 
+inputBox.addEventListener("input", function () {
+  const inputText = inputBox.value;
+  const characterCount = inputText.length;
+
+  if (characterCount > inputLimit) {
+    const truncate = inputText.slice(0, inputLimit);
+    inputBox.value = truncate;
+  }
+});
+
 function renderListI(listI) {
   let li = "";
   for (let i = 0; i < listI.length; i++) {
@@ -43,8 +54,8 @@ function renderListI(listI) {
 }
 
 function toggleBtn(checkbox) {
-  // const listItem = checkbox.parentNode;
-  const listItem = document.getElementById("boxes");
+  const listItem = checkbox.parentNode;
+  // const listItem = document.getElementById("boxes");
   const textSpan = listItem.querySelector("span");
   if (checkbox.checked) {
     // textSpan.style.textDecoration = "line-through";
